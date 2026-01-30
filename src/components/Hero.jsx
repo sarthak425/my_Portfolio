@@ -39,7 +39,10 @@ const Hero = () => {
             <span className="text-[#915EFF] font-semibold">
               <Typewriter
                 options={{
-                  strings: ["CyberSecurity", "AI & ML", "NLP"],
+                  strings: ["Java Developer",
+  "Full-Stack Java",
+  "React Developer",
+  "HTML • CSS • JavaScript"],
                   autoStart: true,
                   loop: true,
                   deleteSpeed: "natural",
