@@ -1,10 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Smooth animated background */
+@theme {
+  --color-primary: #050816;
+  --color-secondary: #aaa6c3;
+  --color-tertiary: #151030;
+  --color-black-100: #100d25;
+  --color-black-200: #090325;
+  --color-white-100: #f3f3f3;
+  --shadow-card: 0 35px 120px -15px #211e35;
+  --breakpoint-xs: 450px;
+  --background-image-hero-pattern: url('/herobg.png');
+}
+
+/* =====================
+   KEYFRAMES
+   ===================== */
 @keyframes gradientShift {
   0%, 100% { background-position: 0% 50%; }
   25% { background-position: 25% 50%; }
@@ -12,9 +24,45 @@
   75% { background-position: 75% 50%; }
 }
 
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 5px #915EFF, 0 0 20px #915EFF40; }
+  50% { box-shadow: 0 0 20px #915EFF, 0 0 60px #915EFF60, 0 0 100px #915EFF30; }
+}
+
+@keyframes border-glow {
+  0%, 100% { border-color: #915EFF; }
+  50% { border-color: #00cea8; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes card-shine {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* =====================
+   BASE RESET
+   ===================== */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
@@ -30,6 +78,26 @@ body {
   will-change: background-position;
 }
 
+/* =====================
+   GLASSMORPHISM
+   ===================== */
+.glass-nav {
+  background: rgba(5, 8, 22, 0.7) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(145, 94, 255, 0.2) !important;
+}
+
+.glass-card {
+  background: rgba(21, 16, 48, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(145, 94, 255, 0.15);
+}
+
+/* =====================
+   GRADIENTS & BACKGROUNDS
+   ===================== */
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
@@ -37,69 +105,180 @@ body {
 }
 
 .gradient {
-  background: #000000; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #434343, #000000);
   background: linear-gradient(to right, #434343, #000000);
 }
 
 .violet-gradient {
-  background: #804dee;
   background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
-  background: -webkit-linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
 }
 
 .green-pink-gradient {
-  background: #00cea8;
   background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-  background: -webkit-linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
 }
 
-.orange-text-gradient,
-.green-text-gradient,
-.blue-text-gradient,
-.pink-text-gradient {
+.purple-blue-gradient {
+  background: linear-gradient(135deg, #915EFF, #00cea8);
+}
+
+/* =====================
+   TEXT GRADIENTS
+   ===================== */
+.orange-text-gradient {
   background: linear-gradient(to top, #f12711, #f5af19);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.translucent-background {
-  position: fixed;
-  top: 0;
+.green-text-gradient {
+  background: linear-gradient(to top, #11998e, #38ef7d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blue-text-gradient {
+  background: linear-gradient(to top, #2193b0, #6dd5ed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pink-text-gradient {
+  background: linear-gradient(to top, #ec008c, #fc6767);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #915EFF 0%,
+    #ffffff 30%,
+    #00cea8 50%,
+    #ffffff 70%,
+    #915EFF 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* =====================
+   SECTION HEADINGS
+   ===================== */
+.section-head-text {
+  position: relative;
+  display: inline-block;
+}
+
+.section-head-text::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
   left: 0;
-  width: 100%;
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, #915EFF, #00cea8, transparent);
+  border-radius: 9999px;
+}
+
+.text-center.section-head-text::after,
+.text-center .section-head-text::after {
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, #915EFF, #00cea8, transparent);
+}
+
+/* =====================
+   GLOW UTILITIES
+   ===================== */
+.glow-purple {
+  box-shadow: 0 0 20px rgba(145, 94, 255, 0.4), 0 0 60px rgba(145, 94, 255, 0.1);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 206, 168, 0.4), 0 0 60px rgba(0, 206, 168, 0.1);
+}
+
+.glow-text-purple {
+  text-shadow: 0 0 20px rgba(145, 94, 255, 0.8), 0 0 40px rgba(145, 94, 255, 0.4);
+}
+
+/* =====================
+   ANIMATED CARDS
+   ===================== */
+.service-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(145, 94, 255, 0.35), 0 0 40px rgba(0, 206, 168, 0.15);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity by modifying the last value (0.5 in this case) */
-  z-index: 9999; /* Adjust the z-index to ensure it's displayed above other elements if necessary */
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.06),
+    transparent
+  );
+  transition: left 0.5s ease;
+  z-index: 1;
+  pointer-events: none;
 }
 
-@keyframes spin {
-  0%, 100% {
-    /* Box shadow styles */
-  }
-  12.5% {
-    /* Box shadow styles */
-  }
-  25% {
-    /* Box shadow styles */
-  }
-  37.5% {
-    /* Box shadow styles */
-  }
-  50% {
-    /* Box shadow styles */
-  }
-  62.5% {
-    /* Box shadow styles */
-  }
-  75% {
-    /* Box shadow styles */
-  }
-  87.5% {
-    /* Box shadow styles */
-  }
+.service-card:hover::before {
+  left: 200%;
 }
 
+/* =====================
+   PROJECT CARDS
+   ===================== */
+.project-card {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 80px rgba(145, 94, 255, 0.3);
+}
+
+.card-img_hover {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .card-img_hover {
+  opacity: 1;
+}
+
+/* =====================
+   FLOATING ANIMATION
+   ===================== */
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+.float-animation-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-animation-delay {
+  animation: float 4s ease-in-out 1s infinite;
+}
+
+/* =====================
+   CANVAS ELEMENTS
+   ===================== */
 .canvas-loader {
   font-size: 10px;
   width: 1em;
@@ -113,49 +292,140 @@ body {
 
 .stars-canvas-container {
   width: 100%;
-  height: auto;
-  position: absolute;
+  height: 100%;
+  position: fixed;
   inset: 0;
   z-index: -1;
+  pointer-events: none;
 }
 
-/* global.css */
-.input-field {
-  display: flex;
-  flex-direction: column;
+/* =====================
+   NAV LINK GLOW
+   ===================== */
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
 }
 
-.input-label {
-  color: #fff;
-  font-weight: 600;
-  margin-bottom: 16px;
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #915EFF, #00cea8);
+  border-radius: 9999px;
+  transition: width 0.3s ease;
 }
 
-.input {
-  background: #333; /* Background color */
-  padding: 16px 24px;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* =====================
+   TIMELINE GLOW
+   ===================== */
+.vertical-timeline::before {
+  background: linear-gradient(to bottom, #915EFF, #00cea8, #915EFF) !important;
+  box-shadow: 0 0 15px rgba(145, 94, 255, 0.4) !important;
+}
+
+.vertical-timeline-element-icon {
+  box-shadow: 0 0 0 4px #1d1836, 0 0 20px rgba(145, 94, 255, 0.5) !important;
+}
+
+/* =====================
+   FORM INPUTS
+   ===================== */
+.input-glow:focus {
+  box-shadow: 0 0 0 2px rgba(145, 94, 255, 0.5), 0 0 20px rgba(145, 94, 255, 0.2);
   outline: none;
-  font-weight: 600;
-  placeholder-color: #999; /* Placeholder text color */
 }
 
-.input-error {
-  color: #ff0000;
+/* =====================
+   FILTER TABS
+   ===================== */
+.filter-tab {
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.submit-button {
-  background: #c0c0c0; /* Background color */
-  padding: 12px 24px;
-  border-radius: 16px;
-  outline: none;
-  color: #fff;
-  font-weight: 600;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for the button */
+.filter-tab.active,
+.filter-tab:hover {
+  background: linear-gradient(135deg, #915EFF, #00cea8);
+  color: white;
+  box-shadow: 0 4px 20px rgba(145, 94, 255, 0.4);
 }
 
-.confirmation {
-  color: #00ff00;
+/* =====================
+   SCROLL INDICATOR
+   ===================== */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #915EFF, #00cea8);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* =====================
+   SOCIAL LINKS
+   ===================== */
+.social-link {
+  transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(145, 94, 255, 0.4);
+}
+
+/* =====================
+   UTILITY OVERRIDES
+   ===================== */
+.translucent-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+/* =====================
+   SUBMIT BUTTON
+   ===================== */
+.submit-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #915EFF, #6b46c1);
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #00cea8, #915EFF);
+  box-shadow: 0 8px 30px rgba(145, 94, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.submit-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 60%;
+  height: 200%;
+  background: rgba(255,255,255,0.1);
+  transform: skewX(-20deg);
+  transition: left 0.4s ease;
+}
+
+.submit-btn:hover::after {
+  left: 150%;
 }

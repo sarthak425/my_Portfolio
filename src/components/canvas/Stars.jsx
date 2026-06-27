@@ -2,20 +2,14 @@ import { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
-import "../../index.css";
 
-const NUM_STARS = 1500; // Adjust the number of stars as needed
-
-const Stars = () => {
-  const ref = useRef({
-    rotation: { x: 0, y: 0, z: Math.PI / 4 },
-  });
-
-  const sphere = random.inSphere(new Float32Array(NUM_STARS * 3), { radius: 1.2 });
+const StarLayer = ({ count, radius, color, speed, size }) => {
+  const ref = useRef();
+  const sphere = random.inSphere(new Float32Array(count * 3), { radius });
 
   useFrame((state, delta) => {
-    ref.current.rotation.x -= delta / 10;
-    ref.current.rotation.y -= delta / 15;
+    ref.current.rotation.x -= delta * speed * 0.7;
+    ref.current.rotation.y -= delta * speed;
   });
 
   return (
@@ -23,8 +17,8 @@ const Stars = () => {
       <Points ref={ref} positions={sphere} stride={3} frustumCulled>
         <PointMaterial
           transparent
-          color="#f272c8"
-          size={0.002}
+          color={color}
+          size={size}
           sizeAttenuation={true}
           depthWrite={false}
         />
@@ -34,12 +28,26 @@ const Stars = () => {
 };
 
 const StarsCanvas = () => (
-  <div className="stars-canvas-container">
+  <div
+    style={{
+      width: "100%",
+      height: "auto",
+      position: "absolute",
+      inset: 0,
+      zIndex: -1,
+    }}
+  >
     <Canvas camera={{ position: [0, 0, 1] }}>
       <Suspense fallback={null}>
-        <Stars />
+        {/* Far layer — small white stars, slow */}
+        <StarLayer count={800} radius={1.4} color="#ffffff" speed={0.04} size={0.0015} />
+        {/* Mid layer — pink stars */}
+        <StarLayer count={500} radius={1.1} color="#f272c8" speed={0.07} size={0.002} />
+        {/* Near layer — purple/cyan, fast */}
+        <StarLayer count={300} radius={0.8} color="#915EFF" speed={0.12} size={0.003} />
+        {/* Accent — cyan sparkles */}
+        <StarLayer count={200} radius={0.9} color="#00cea8" speed={0.09} size={0.0025} />
       </Suspense>
-
       <Preload all />
     </Canvas>
   </div>
