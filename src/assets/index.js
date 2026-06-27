@@ -3,7 +3,7 @@ import abhinav  from "./company/abhinav.jpeg";
 import exp from "./company/Definitics.jpeg";
 import trinity  from "./company/trinity.png";
 import OrangeItech from "./company/OrangeItech.jpg";
-
+import gtt from "./company/gtt-data-solutions-rights-issue-logo.jpg";
 
 // Import tech stack images
 import java from "./tech-stack/java.png";
@@ -19,6 +19,7 @@ import WeatherDataAnalysis from "./projects/Weather-Data-Analysis.jpg";
 import OnlineVotingApplication from "./projects/Online-Voting-Application.png";
 import chatApplication from "./projects/chatApplication.png";
 import CLOUDSTREAMING from "./projects/CLOUD-STREAMING.webp";
+import resume from "./projects/AI Resume Builder.png";
 
 // Import tech logos
 import css from "./tech/css.png";
@@ -31,10 +32,11 @@ import tailwind from "./tech/tailwind.png";
 import threejs from "./tech/threejs.png";
 
 // Import common assets
-import logo from "./logo.jpeg";
+import logo from "./logo.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
+
 
 export {
   exp,
@@ -63,4 +65,6 @@ export {
   menu,
   close,
   OrangeItech,
+  gtt,
+  resume,
 };

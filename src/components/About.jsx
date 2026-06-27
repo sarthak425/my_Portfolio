@@ -38,7 +38,7 @@ const About = () => {
 
       <motion.p
         variants={fadeIn('', '', 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        className="mt-4 text-secondary text-[19px] max-w-3x2 leading-[35px]"
       >
       I am a passionate and detail-oriented Web Developer with a strong foundation in Java, HTML, CSS ,React and React, and hands-on experience in building full-stack web applications. I have also gained working knowledge of  Node.js, and .NET. I enjoy creating responsive, user-friendly websites and applications that solve real-world problems.
 Currently, I am enhancing my skills by completing a Java Full Stack Development Course, where I am learning advanced backend development with Spring Boot, database management with MySQL, and frontend frameworks such as React. I am constantly seeking to improve my skills and keep up with modern
