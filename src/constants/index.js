@@ -21,6 +21,8 @@ import {
   abhinav ,
   chatApplication,
   OrangeItech,
+  gtt,
+  resume,
 } from "../assets";
 
 export const navLinks = [
@@ -96,15 +98,48 @@ export const experiences = [
     company_name: "Trinity College ",
     icon: trinity ,
     iconBg: "#161329",
-    date: " 2025 -  2026",
+    date: " 2025 -  2027",
     points: [
       "I am currently pursuing my Master of Computer Applications (MCA) at Trinity College, where I am deepening my knowledge of advanced computer science concepts and professional practices.",
       "This ongoing study is helping me strengthen my expertise in software development and prepare for a successful career in the IT industry.",
     ],
   },
+
+ {
+    title: "Machine Learning Internship ",
+    company_name: "GTT Data Solutions Ltd. ",
+    icon: gtt ,
+    iconBg: "#161329",
+    date: " 2026",
+    points: [
+      "GTT Data Solutions Ltd. (2026) ",
+      "Gained hands-on exposure to Machine Learning concepts, Python basics, Flask/Django CRUD applications, and practical problem-solving workflows. "
+    ],
+  },
 ];
 
 export const projects = [
+
+
+   {
+    name: "AI Resume Builder",
+    description:
+      "Developed an AI-powered Resume Builder that generates professional ATS-friendly resumes from user prompts using Generative AI. The application uses Spring AI integrated with Ollama to create structured resume data, while the React frontend provides an intuitive interface for editing, previewing, printing, and exporting resumes as PDF.",
+    tags: [
+      { name: "Spring Boot", color: "green-text-gradient" },
+      { name: "React.js", color: "pink-text-gradient" },
+      { name: "Spring AI", color: "blue-text-gradient" },
+      { name: "MySQL", color: "blue-text-gradient" },
+      { name: "Ollama", color: "blue-text-gradient" },
+    ],
+  
+    image: resume ,
+    
+    source_code_link: "https://github.com/sarthak425/CV-Genix",
+     demo_link: "https://github.com/sarthak425/CV-Genix",
+  },
+
+
   {
     name: "Notes Store App",
     description:
@@ -164,6 +199,7 @@ export const projects = [
     image: chatApplication,
     source_code_link: "https://github.com/sarthak425/chat-Application-using-Spring-Boot-and-WebSockets",
   },
+  
   {
     name: "Cloud Streeaming",
     description:
