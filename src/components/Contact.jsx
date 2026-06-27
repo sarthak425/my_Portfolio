@@ -188,9 +188,8 @@ const Contact = () => {
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className={`text-[14px] font-medium ${
-                  confirmation.startsWith("✅") ? "text-green-400" : "text-red-400"
-                }`}
+                className={`text-[14px] font-medium ${confirmation.startsWith("✅") ? "text-green-400" : "text-red-400"
+                  }`}
               >
                 {confirmation}
               </motion.p>

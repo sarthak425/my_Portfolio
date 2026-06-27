@@ -1,7 +1,7 @@
 // Import company logos
-import abhinav  from "./company/abhinav.jpeg";
+import abhinav from "./company/abhinav.jpeg";
 import exp from "./company/Definitics.jpeg";
-import trinity  from "./company/trinity.png";
+import trinity from "./company/trinity.png";
 import OrangeItech from "./company/OrangeItech.jpg";
 import gtt from "./company/gtt-data-solutions-rights-issue-logo.jpg";
 
@@ -20,6 +20,7 @@ import OnlineVotingApplication from "./projects/Online-Voting-Application.png";
 import chatApplication from "./projects/chatApplication.png";
 import CLOUDSTREAMING from "./projects/CLOUD-STREAMING.webp";
 import resume from "./projects/AI Resume Builder.png";
+import full from "./projects/full.png"
 
 // Import tech logos
 import css from "./tech/css.png";
@@ -40,8 +41,8 @@ import close from "./close.svg";
 
 export {
   exp,
-  abhinav ,
-  trinity ,
+  abhinav,
+  trinity,
   react,
   c,
   cpp,
@@ -67,4 +68,5 @@ export {
   OrangeItech,
   gtt,
   resume,
+  full,
 };

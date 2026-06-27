@@ -56,10 +56,14 @@ const Hero = () => {
               <Typewriter
                 options={{
                   strings: [
-                    "Java Developer",
-                    "Full-Stack Java",
-                    "React Developer",
-                    "HTML • CSS • JavaScript",
+                    "Java Full Stack Developer",
+                    "Spring Boot",
+                    "React",
+                    "Spring AI",
+                    "MySQL",
+                    "HTML/CSS/JS",
+                    "REST APIs",
+                    "WebSocket"
                   ],
                   autoStart: true,
                   loop: true,

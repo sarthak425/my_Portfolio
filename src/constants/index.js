@@ -11,18 +11,19 @@ import {
   tailwind,
   nodejs,
   git,
-  trinity ,
+  trinity,
   NotesStoreapp,
   ECommerceProduct,
   OnlineVotingApplication,
   threejs,
   WeatherDataAnalysis,
   CLOUDSTREAMING,
-  abhinav ,
+  abhinav,
   chatApplication,
   OrangeItech,
   gtt,
   resume,
+  full,
 } from "../assets";
 
 export const navLinks = [
@@ -71,9 +72,9 @@ export const experiences = [
     ],
   },
   {
-  title: "internship",
+    title: "internship",
     company_name: "Definitics Software Solutions Pvt Ltd",
-    icon: exp ,
+    icon: exp,
     iconBg: "#161329",
     date: "2025",
     points: [
@@ -85,7 +86,7 @@ export const experiences = [
   {
     title: "BCA",
     company_name: "Abhinav Education Society's College of Arts and Commerce",
-    icon: abhinav ,
+    icon: abhinav,
     iconBg: "#161329",
     date: "2022 -  2024",
     points: [
@@ -96,7 +97,7 @@ export const experiences = [
   {
     title: "MCA",
     company_name: "Trinity College ",
-    icon: trinity ,
+    icon: trinity,
     iconBg: "#161329",
     date: " 2025 -  2027",
     points: [
@@ -105,10 +106,10 @@ export const experiences = [
     ],
   },
 
- {
+  {
     title: "Machine Learning Internship ",
     company_name: "GTT Data Solutions Ltd. ",
-    icon: gtt ,
+    icon: gtt,
     iconBg: "#161329",
     date: " 2026",
     points: [
@@ -121,7 +122,7 @@ export const experiences = [
 export const projects = [
 
 
-   {
+  {
     name: "AI Resume Builder",
     description:
       "Developed an AI-powered Resume Builder that generates professional ATS-friendly resumes from user prompts using Generative AI. The application uses Spring AI integrated with Ollama to create structured resume data, while the React frontend provides an intuitive interface for editing, previewing, printing, and exporting resumes as PDF.",
@@ -132,14 +133,49 @@ export const projects = [
       { name: "MySQL", color: "blue-text-gradient" },
       { name: "Ollama", color: "blue-text-gradient" },
     ],
-  
-    image: resume ,
-    
+
+    image: resume,
+
     source_code_link: "https://github.com/sarthak425/CV-Genix",
-     demo_link: "https://github.com/sarthak425/CV-Genix",
+    demo_link: "https://github.com/sarthak425/CV-Genix",
   },
 
+  {
+    name: "FlowerSense-AI",
+    description:
+      "FlowerSense-AI is an AI-powered flower recognition system that uses deep learning and computer vision to identify different flower species from images. The application enables users to upload or capture flower images, which are processed by a trained machine learning model to accurately classify the flower and provide its predicted species.",
+    tags: [
+      { name: "Python", color: "green-text-gradient" },
+      { name: "Keras", color: "pink-text-gradient" },
+      { name: "Tensorflow", color: "blue-text-gradient" },
+      { name: "OpenCV", color: "blue-text-gradient" },
+      { name: "Numpy", color: "blue-text-gradient" },
+      { name: "Matplotlib", color: "blue-text-gradient" },
+      { name: "Pandas", color: "blue-text-gradient" },
+    ],
 
+    image: full,
+
+    source_code_link: "https://github.com/sarthak425/FlowerSense-AI",
+    demo_link: "https://github.com/sarthak425/FlowerSense-AI",
+  },
+  {
+    name: "Chat Application",
+    description:
+      "This project is a simple real-time chat application built with Spring Boot, WebSockets, SockJS, STOMP, and Bootstrap for frontend styling. It allows users to exchange messages instantly in a responsive web interface.",
+    tags: [
+      { name: "Java", color: "blue-text-gradient" },
+      { name: "Spring Boot", color: "green-text-gradient" },
+      { name: "WebSocket", color: "pink-text-gradient" },
+      { name: "SockJS", color: "blue-text-gradient" },
+      { name: "STOMP", color: "blue-text-gradient" },
+       { name: "Thymeleaf", color: "blue-text-gradient" },
+        { name: "Bootstrap", color: "blue-text-gradient" },
+      
+    ],
+    image: chatApplication,
+    source_code_link: "https://github.com/sarthak425/chat-Application-using-Spring-Boot-and-WebSockets",
+  },
   {
     name: "Notes Store App",
     description:
@@ -187,19 +223,8 @@ export const projects = [
     image: OnlineVotingApplication,
     source_code_link: "https://github.com/sarthak425/Online-Voting-Application-Spring-Boot-Angular-",
   },
-  {
-    name: "Chat Application",
-    description:
-      "This project is a simple real-time chat application built with Spring Boot, WebSockets, SockJS, STOMP, and Bootstrap for frontend styling. It allows users to exchange messages instantly in a responsive web interface.",
-    tags: [
-      { name: "Java", color: "blue-text-gradient" },
-      { name: "Spring Boot 3.5", color: "green-text-gradient" },
-      { name: "HTML", color: "pink-text-gradient" },
-    ],
-    image: chatApplication,
-    source_code_link: "https://github.com/sarthak425/chat-Application-using-Spring-Boot-and-WebSockets",
-  },
-  
+
+
   {
     name: "Cloud Streeaming",
     description:

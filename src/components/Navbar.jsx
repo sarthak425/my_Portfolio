@@ -11,7 +11,7 @@ const Navbar = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   const toggleResume = () => {
-    window.open('/Resume.pdf');
+    window.open('/sarthak.resume.pdf');
   };
 
   useEffect(() => {
@@ -40,9 +40,8 @@ const Navbar = () => {
       />
 
       <nav
-        className={`${styles.paddingX} w-full flex items-center py-4 fixed top-0 z-20 transition-all duration-500 ${
-          scrolled ? 'glass-nav' : 'bg-transparent'
-        }`}
+        className={`${styles.paddingX} w-full flex items-center py-4 fixed top-0 z-20 transition-all duration-500 ${scrolled ? 'glass-nav' : 'bg-transparent'
+          }`}
       >
         <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
           <Link
@@ -58,7 +57,7 @@ const Navbar = () => {
               alt="logo"
               className="w-9 h-9 object-contain transition-transform duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(145,94,255,0.8)]"
             />
-            <p className="text-white text-[18px] font-bold cursor-pointer flex items-center gap-1">
+            <p className="text-white text-[25px] font-bold cursor-pointer flex items-center gap-1">
               <span className="text-[#915EFF]">Sarthak</span>
               <span className="sm:block hidden text-white opacity-70">Khatpe</span>
             </p>
@@ -69,9 +68,8 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <li
                 key={link.id}
-                className={`nav-link text-[15px] font-medium cursor-pointer transition-all duration-200 ${
-                  active === link.title ? 'text-white' : 'text-secondary'
-                } hover:text-white`}
+                className={`nav-link text-[15px] font-medium cursor-pointer transition-all duration-200 ${active === link.title ? 'text-white' : 'text-secondary'
+                  } hover:text-white`}
                 onClick={() => setActive(link.title)}
               >
                 <a href={`#${link.id}`}>{link.title}</a>
@@ -96,17 +94,15 @@ const Navbar = () => {
               onClick={() => setToggle(!toggle)}
             />
             <div
-              className={`glass-card p-6 absolute top-16 right-4 min-w-[160px] z-10 rounded-2xl transition-all duration-300 ${
-                toggle ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'
-              }`}
+              className={`glass-card p-6 absolute top-16 right-4 min-w-[160px] z-10 rounded-2xl transition-all duration-300 ${toggle ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'
+                }`}
             >
               <ul className="list-none flex flex-col gap-4">
                 {navLinks.map((link) => (
                   <li
                     key={link.id}
-                    className={`${
-                      active === link.title ? 'text-white' : 'text-secondary'
-                    } hover:text-white text-[16px] font-medium cursor-pointer`}
+                    className={`${active === link.title ? 'text-white' : 'text-secondary'
+                      } hover:text-white text-[16px] font-medium cursor-pointer`}
                     onClick={() => {
                       setToggle(false);
                       setActive(link.title);

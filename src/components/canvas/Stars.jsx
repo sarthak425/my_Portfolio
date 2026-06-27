@@ -31,10 +31,14 @@ const StarsCanvas = () => (
   <div
     style={{
       width: "100%",
-      height: "auto",
-      position: "absolute",
-      inset: 0,
-      zIndex: -1,
+      height: "100vh",
+      position: "fixed",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      zIndex: 0,
+      pointerEvents: "none",
     }}
   >
     <Canvas camera={{ position: [0, 0, 1] }}>
