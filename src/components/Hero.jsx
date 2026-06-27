@@ -93,10 +93,17 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* 3D CANVAS */}
-      <div className="absolute inset-0 z-10">
+      {/* 3D CANVAS — hidden on very small phones, visible from xs up */}
+      <div className="absolute inset-0 z-10 hidden xs:block">
         <ComputersCanvas />
       </div>
+
+      {/* Mobile fallback glow — shown only on very small phones */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 xs:hidden z-10 pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse at 50% 100%, rgba(145,94,255,0.25) 0%, transparent 70%)",
+        }}
+      />
 
       {/* SCROLL INDICATOR */}
       <motion.div

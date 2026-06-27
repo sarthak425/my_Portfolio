@@ -109,7 +109,7 @@ const About = () => {
 
         <motion.p
           variants={fadeIn('', '', 0.1, 1)}
-          className="mt-6 text-secondary text-[17px] max-w-3xl leading-[32px]"
+          className="mt-6 text-secondary text-[19px] max-w-6xl leading-[38px]"
         >
           I am a passionate and detail-oriented Web Developer with a strong foundation in{' '}
           <span className="text-[#915EFF] font-semibold">Java, React, HTML, CSS</span>, and hands-on
@@ -123,7 +123,7 @@ const About = () => {
         {/* Stats Row */}
         <motion.div
           variants={fadeIn('up', 'spring', 0.3, 0.75)}
-          className="mt-10 grid grid-cols-2 xs:grid-cols-4 gap-4 max-w-2xl"
+          className="mt-10 grid grid-cols-2 xs:grid-cols-4 gap-9 max-w-4xl"
         >
           {stats.map((stat, index) => (
             <motion.div
