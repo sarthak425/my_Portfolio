@@ -89,8 +89,8 @@ const Works = () => {
     activeFilter === "All"
       ? projects
       : projects.filter((p) =>
-          p.tags.some((t) => t.name === activeFilter)
-        );
+        p.tags.some((t) => t.name === activeFilter)
+      );
 
   return (
     <>
@@ -114,15 +114,14 @@ const Works = () => {
         variants={fadeIn("", "", 0.2, 0.8)}
         className="mt-8 flex flex-wrap gap-3"
       >
-        {["All", "Java", "React", "Spring Boot"].map((filter) => (
+        {["All", "Java", "React", "Spring Boot", "React.js","Python"].map((filter) => (
           <button
             key={filter}
             onClick={() => setActiveFilter(filter)}
-            className={`filter-tab px-4 py-2 rounded-full text-[13px] font-semibold border transition-all duration-300 ${
-              activeFilter === filter
+            className={`filter-tab px-4 py-2 rounded-full text-[13px] font-semibold border transition-all duration-300 ${activeFilter === filter
                 ? "active border-transparent text-white shadow-[0_0_20px_rgba(145,94,255,0.5)]"
                 : "border-[#915EFF]/30 text-secondary hover:border-[#915EFF]/60"
-            }`}
+              }`}
           >
             {filter}
           </button>

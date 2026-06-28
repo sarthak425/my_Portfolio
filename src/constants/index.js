@@ -169,12 +169,25 @@ export const projects = [
       { name: "WebSocket", color: "pink-text-gradient" },
       { name: "SockJS", color: "blue-text-gradient" },
       { name: "STOMP", color: "blue-text-gradient" },
-       { name: "Thymeleaf", color: "blue-text-gradient" },
-        { name: "Bootstrap", color: "blue-text-gradient" },
-      
+      { name: "Thymeleaf", color: "blue-text-gradient" },
+      { name: "Bootstrap", color: "blue-text-gradient" },
+
     ],
     image: chatApplication,
     source_code_link: "https://github.com/sarthak425/chat-Application-using-Spring-Boot-and-WebSockets",
+  },
+  {
+    name: "E Commerce Product",
+    description:
+      "E-Commerce Product Catalog (React + Spring Boot) This project is a full-stack E-Commerce Product Catalog Application built using React for the frontend and Spring Boot for the backend. It allows users to browse, filter, and search through products, view them by categories, and manage a simple cart interface.",
+    tags: [
+      { name: "Spring Boot", color: "blue-text-gradient" },
+      { name: "React", color: "green-text-gradient" },
+      { name: "HTML", color: "pink-text-gradient" },
+      { name: "Tailwind CSS", color: "blue-text-gradient" },
+    ],
+    image: ECommerceProduct,
+    source_code_link: "https://github.com/sarthak425/E-Commerce-Product",
   },
   {
     name: "Notes Store App",
@@ -187,18 +200,6 @@ export const projects = [
     ],
     image: NotesStoreapp,
     source_code_link: "https://github.com/sarthak425/Notes-Store-app",
-  },
-  {
-    name: "E Commerce Product",
-    description:
-      "E-Commerce Product Catalog (React + Spring Boot) This project is a full-stack E-Commerce Product Catalog Application built using React for the frontend and Spring Boot for the backend. It allows users to browse, filter, and search through products, view them by categories, and manage a simple cart interface.",
-    tags: [
-      { name: "Spring Boot", color: "blue-text-gradient" },
-      { name: "React", color: "green-text-gradient" },
-      { name: "Css", color: "pink-text-gradient" },
-    ],
-    image: ECommerceProduct,
-    source_code_link: "https://github.com/sarthak425/E-Commerce-Product",
   },
   {
     name: "Weather Data Analysis",
@@ -233,6 +234,7 @@ export const projects = [
       { name: "HTML", color: "blue-text-gradient" },
       { name: "Java", color: "green-text-gradient" },
       { name: "Css", color: "pink-text-gradient" },
+      { name: "JavaScript", color: "blue-text-gradient" },
     ],
 
     image: CLOUDSTREAMING,

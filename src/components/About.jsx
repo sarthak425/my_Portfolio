@@ -7,9 +7,9 @@ import { styles } from '../styles';
 import { fadeIn, textVariant } from '../utils/motion';
 
 const stats = [
-  { value: "6+", label: "Projects Built" },
-  { value: "2+", label: "Years Learning" },
-  { value: "5+", label: "Technologies" },
+  { value: "15+", label: "Projects Built" },
+  { value: "4+", label: "Years Learning" },
+  { value: "10+", label: "Technologies" },
   { value: "2", label: "Internships" },
 ];
 
