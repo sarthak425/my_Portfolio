@@ -21,6 +21,9 @@ import chatApplication from "./projects/chatApplication.png";
 import CLOUDSTREAMING from "./projects/CLOUD-STREAMING.webp";
 import resume from "./projects/AI Resume Builder.png";
 import full from "./projects/full.png"
+import urlshortener from "./projects/urlshortener.png"
+import textutil from "./projects/textutil.png"
+import simplespringproject from "./projects/simplespringproject.png"
 
 // Import tech logos
 import css from "./tech/css.png";
@@ -69,4 +72,7 @@ export {
   gtt,
   resume,
   full,
+  urlshortener,
+  textutil,
+  simplespringproject,
 };

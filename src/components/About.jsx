@@ -111,13 +111,30 @@ const About = () => {
           variants={fadeIn('', '', 0.1, 1)}
           className="mt-6 text-secondary text-[19px] max-w-6xl leading-[38px]"
         >
-          I am a passionate and detail-oriented Web Developer with a strong foundation in{' '}
-          <span className="text-[#915EFF] font-semibold">Java, React, HTML, CSS</span>, and hands-on
-          experience in building full-stack web applications. I have also gained working knowledge of{' '}
-          <span className="text-[#00cea8] font-semibold">Node.js, Spring Boot, and .NET</span>. I enjoy
-          creating responsive, user-friendly websites and applications that solve real-world problems.
-          Currently enhancing my skills through a Java Full Stack Development Course, learning advanced
-          backend with Spring Boot, MySQL, and modern React patterns.
+        <p className="text-secondary text-[17px] leading-[30px]">
+  I am a passionate and detail-oriented{' '}
+  <span className="text-[#915EFF] font-semibold">
+    Java Full Stack Developer
+  </span>{' '}
+  with expertise in{' '}
+  <span className="text-[#915EFF] font-semibold">
+    Java, Spring Boot, React, MySQL, HTML, CSS, and JavaScript
+  </span>
+  . I enjoy building{' '}
+  <span className="text-[#00cea8] font-semibold">
+    scalable, responsive, and user-friendly web applications
+  </span>{' '}
+  that solve real-world problems. My portfolio includes{' '}
+  <span className="text-[#915EFF] font-semibold">
+    AI-powered applications, real-time chat systems, authentication-based web apps,
+    and machine learning projects
+  </span>
+  . I am continuously expanding my knowledge in{' '}
+  <span className="text-[#00cea8] font-semibold">
+    modern backend development, cloud technologies, and AI integration
+  </span>{' '}
+  while building practical, industry-focused projects.
+</p>
         </motion.p>
 
         {/* Stats Row */}

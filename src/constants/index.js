@@ -24,6 +24,9 @@ import {
   gtt,
   resume,
   full,
+  urlshortener,
+  textutil,
+  simplespringproject,
 } from "../assets";
 
 export const navLinks = [
@@ -140,25 +143,24 @@ export const projects = [
     demo_link: "https://github.com/sarthak425/CV-Genix",
   },
 
+
   {
-    name: "FlowerSense-AI",
+    name: "URL Shortener",
     description:
-      "FlowerSense-AI is an AI-powered flower recognition system that uses deep learning and computer vision to identify different flower species from images. The application enables users to upload or capture flower images, which are processed by a trained machine learning model to accurately classify the flower and provide its predicted species.",
+      "Developed a secure URL Shortener application that converts long URLs into short, shareable links with JWT-based user authentication. Built using Spring Boot and React, the application enables users to create, manage, update, and track shortened URLs through a responsive and user-friendly interface backed by MySQL.",
     tags: [
-      { name: "Python", color: "green-text-gradient" },
-      { name: "Keras", color: "pink-text-gradient" },
-      { name: "Tensorflow", color: "blue-text-gradient" },
-      { name: "OpenCV", color: "blue-text-gradient" },
-      { name: "Numpy", color: "blue-text-gradient" },
-      { name: "Matplotlib", color: "blue-text-gradient" },
-      { name: "Pandas", color: "blue-text-gradient" },
+      { name: "Spring Boot", color: "green-text-gradient" },
+      { name: "React.js", color: "pink-text-gradient" },
+      { name: "Spring Security", color: "blue-text-gradient" },
+      { name: "JWT", color: "orange-text-gradient" },
+      { name: "MySQL", color: "blue-text-gradient" },
     ],
 
-    image: full,
+    image: urlshortener,
 
-    source_code_link: "https://github.com/sarthak425/FlowerSense-AI",
-    demo_link: "https://github.com/sarthak425/FlowerSense-AI",
+    source_code_link: "https://github.com/sarthak425/url-shortener",
   },
+
   {
     name: "Chat Application",
     description:
@@ -188,6 +190,25 @@ export const projects = [
     ],
     image: ECommerceProduct,
     source_code_link: "https://github.com/sarthak425/E-Commerce-Product",
+  },
+  {
+    name: "FlowerSense-AI",
+    description:
+      "FlowerSense-AI is an AI-powered flower recognition system that uses deep learning and computer vision to identify different flower species from images. The application enables users to upload or capture flower images, which are processed by a trained machine learning model to accurately classify the flower and provide its predicted species.",
+    tags: [
+      { name: "Python", color: "green-text-gradient" },
+      { name: "Keras", color: "pink-text-gradient" },
+      { name: "Tensorflow", color: "blue-text-gradient" },
+      { name: "OpenCV", color: "blue-text-gradient" },
+      { name: "Numpy", color: "blue-text-gradient" },
+      { name: "Matplotlib", color: "blue-text-gradient" },
+      { name: "Pandas", color: "blue-text-gradient" },
+    ],
+
+    image: full,
+
+    source_code_link: "https://github.com/sarthak425/FlowerSense-AI",
+    demo_link: "https://github.com/sarthak425/FlowerSense-AI",
   },
   {
     name: "Notes Store App",
@@ -224,8 +245,41 @@ export const projects = [
     image: OnlineVotingApplication,
     source_code_link: "https://github.com/sarthak425/Online-Voting-Application-Spring-Boot-Angular-",
   },
+{
+  name: "TextUtil",
+  description:
+    "Developed a responsive Text Utility web application that provides various text processing features such as converting text to uppercase/lowercase, removing extra spaces, counting words and characters, estimating reading time, and copying processed text instantly. Built with React.js, the application offers a clean, user-friendly interface for efficient text manipulation.",
+  tags: [
+    { name: "React.js", color: "pink-text-gradient" },
+    { name: "JavaScript", color: "yellow-text-gradient" },
+    { name: "HTML5", color: "orange-text-gradient" },
+    { name: "CSS3", color: "blue-text-gradient" },
+    { name: "Bootstrap", color: "green-text-gradient" },
+  ],
 
+  image: textutil,
 
+  source_code_link: "https://github.com/sarthak425/TextUtil",
+  demo_link: "https://github.com/sarthak425/TextUtil",
+},
+
+{
+  name: "Simple Spring Project",
+  description:
+    "Developed a RESTful CRUD application using Spring Boot that demonstrates the fundamentals of backend development. The project provides APIs for creating, retrieving, updating, and deleting records while following a layered architecture with Spring Data JPA, Hibernate, and MySQL for efficient data persistence.",
+  tags: [
+    { name: "Java", color: "orange-text-gradient" },
+    { name: "Spring Boot", color: "green-text-gradient" },
+    { name: "Spring Data JPA", color: "blue-text-gradient" },
+    { name: "Hibernate", color: "pink-text-gradient" },
+    { name: "MySQL", color: "blue-text-gradient" },
+  ],
+
+  image: simplespringproject,
+
+  source_code_link: "https://github.com/sarthak425/SimpleSpringProject",
+  demo_link: "https://github.com/sarthak425/SimpleSpringProject",
+},
   {
     name: "Cloud Streeaming",
     description:
