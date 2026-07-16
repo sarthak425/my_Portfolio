@@ -11,7 +11,7 @@ const Navbar = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   const toggleResume = () => {
-    window.open(`${import.meta.env.BASE_URL}sarthak.resume.pdf`, '_blank');
+    window.open(`${import.meta.env.BASE_URL}sarthak.resume.pdf?v=2`, '_blank');
   };
 
   // Scroll progress + scrolled state
