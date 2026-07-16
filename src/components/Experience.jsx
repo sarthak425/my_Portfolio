@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -11,7 +11,15 @@ import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant, fadeIn } from "../utils/motion";
 
-const ExperienceCard = ({ experience, index }) => (
+// Split experiences into categories
+const educationItems = experiences.filter((e) =>
+  ["BCA", "MCA", "Full stack Java developer Course"].includes(e.title)
+);
+const workItems = experiences.filter((e) =>
+  ["internship", "Machine Learning Internship "].includes(e.title)
+);
+
+const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
     contentStyle={{
       background: "rgba(29, 24, 54, 0.85)",
@@ -71,29 +79,62 @@ const ExperienceCard = ({ experience, index }) => (
   </VerticalTimelineElement>
 );
 
-const Experience = () => (
-  <>
-    <motion.div variants={textVariant()}>
-      <p className={`${styles.sectionSubText} text-center`}>
-        What I have done so far
-      </p>
-      <h2 className={`${styles.sectionHeadText} text-center section-head-text`}>
-        Work Experience
-      </h2>
-    </motion.div>
+const TAB_STYLES = {
+  active:
+    "bg-gradient-to-r from-[#915EFF] to-[#00cea8] text-white shadow-[0_0_20px_rgba(145,94,255,0.5)] border-transparent",
+  inactive:
+    "border-[#915EFF]/30 text-secondary hover:border-[#915EFF]/60 hover:text-white",
+};
 
-    <div className="mt-20 flex flex-col">
-      <VerticalTimeline lineColor="linear-gradient(to bottom, #915EFF, #00cea8)">
-        {experiences.map((experience, index) => (
-          <ExperienceCard
-            key={`experience-${index}`}
-            experience={experience}
-            index={index}
-          />
+const Experience = () => {
+  const [activeTab, setActiveTab] = useState("experience");
+
+  const displayedItems = activeTab === "education" ? educationItems : workItems;
+
+  return (
+    <>
+      <motion.div variants={textVariant()}>
+        <p className={`${styles.sectionSubText} text-center`}>
+          What I have done so far
+        </p>
+        <h2 className={`${styles.sectionHeadText} text-center section-head-text`}>
+          Experience & Education
+        </h2>
+      </motion.div>
+
+      {/* Tab Switcher */}
+      <motion.div
+        variants={fadeIn("", "", 0.2, 0.8)}
+        className="mt-8 flex justify-center gap-4"
+      >
+        {[
+          { key: "experience", label: "💼 Work Experience" },
+          { key: "education", label: "🎓 Education" },
+        ].map((tab) => (
+          <button
+            key={tab.key}
+            onClick={() => setActiveTab(tab.key)}
+            className={`px-6 py-2 rounded-full text-[14px] font-semibold border transition-all duration-300 ${
+              activeTab === tab.key ? TAB_STYLES.active : TAB_STYLES.inactive
+            }`}
+          >
+            {tab.label}
+          </button>
         ))}
-      </VerticalTimeline>
-    </div>
-  </>
-);
+      </motion.div>
+
+      <div className="mt-14 flex flex-col">
+        <VerticalTimeline lineColor="linear-gradient(to bottom, #915EFF, #00cea8)">
+          {displayedItems.map((experience, index) => (
+            <ExperienceCard
+              key={`experience-${index}`}
+              experience={experience}
+            />
+          ))}
+        </VerticalTimeline>
+      </div>
+    </>
+  );
+};
 
 export default SectionWrapper(Experience, "work");

@@ -78,6 +78,21 @@ body {
   will-change: background-position;
 }
 
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #915EFF, #00cea8);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #915EFF;
+}
+
 /* =====================
    GLASSMORPHISM
    ===================== */
@@ -143,6 +158,18 @@ body {
 
 .pink-text-gradient {
   background: linear-gradient(to top, #ec008c, #fc6767);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.yellow-text-gradient {
+  background: linear-gradient(to top, #f7971e, #ffd200);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.purple-text-gradient {
+  background: linear-gradient(to top, #7b2ff7, #f107a3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

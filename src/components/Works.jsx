@@ -8,9 +8,15 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const allTags = ["All", ...new Set(projects.flatMap((p) => p.tags.map((t) => t.name)))];
+const FILTER_OPTIONS = ["All", "Java", "React", "Spring Boot", "Python", "JavaScript"];
 
-const ProjectCard = ({ name, description, tags, image, source_code_link, index }) => {
+const ExternalLinkIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+  </svg>
+);
+
+const ProjectCard = ({ name, description, tags, image, source_code_link, demo_link, index }) => {
   return (
     <motion.div
       variants={fadeIn("up", "spring", index * 0.15, 0.6)}
@@ -22,7 +28,7 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, index }
     >
       <Tilt
         options={{ max: 15, scale: 1.02, speed: 450 }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full project-card glass-card"
+        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full project-card glass-card flex flex-col"
       >
         {/* Image */}
         <div className="relative w-full h-[230px] overflow-hidden rounded-xl">
@@ -31,8 +37,8 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, index }
             alt={name}
             className="w-full h-full object-cover rounded-xl transition-transform duration-500 hover:scale-110"
           />
-          {/* GitHub overlay */}
-          <div className="absolute inset-0 flex justify-end items-start m-3 card-img_hover opacity-0 hover:opacity-100 transition-opacity duration-300">
+          {/* GitHub overlay button */}
+          <div className="absolute inset-0 flex justify-end items-start m-3 card-img_hover">
             <div
               onClick={() => window.open(source_code_link, "_blank")}
               className="w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-black/80 backdrop-blur border border-[#915EFF] hover:bg-[#915EFF] transition-all duration-300 hover:shadow-[0_0_15px_rgba(145,94,255,0.8)]"
@@ -45,13 +51,14 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, index }
         </div>
 
         {/* Content */}
-        <div className="mt-5">
-          <h3 className="text-white font-bold text-[20px] hover:text-[#915EFF] transition-colors duration-200 cursor-pointer"
+        <div className="mt-5 flex-1 flex flex-col">
+          <h3
+            className="text-white font-bold text-[20px] hover:text-[#915EFF] transition-colors duration-200 cursor-pointer"
             onClick={() => window.open(source_code_link, "_blank")}
           >
             {name}
           </h3>
-          <p className="mt-2 text-secondary text-[13px] leading-relaxed line-clamp-3">{description}</p>
+          <p className="mt-2 text-secondary text-[13px] leading-relaxed line-clamp-3 flex-1">{description}</p>
         </div>
 
         {/* Tags */}
@@ -66,16 +73,28 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, index }
           ))}
         </div>
 
-        {/* View on GitHub link */}
-        <div className="mt-4 pt-4 border-t border-white/10">
+        {/* Action Links */}
+        <div className="mt-4 pt-4 border-t border-white/10 flex items-center gap-4">
           <button
             onClick={() => window.open(source_code_link, "_blank")}
             className="flex items-center gap-2 text-[#915EFF] text-[13px] font-semibold hover:text-[#00cea8] transition-colors duration-200 group"
           >
             <img src={github} alt="github" className="w-4 h-4 object-contain opacity-70 group-hover:opacity-100" />
-            View on GitHub
+            Code
             <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
           </button>
+
+          {demo_link && demo_link !== source_code_link && (
+            <a
+              href={demo_link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-[#00cea8] text-[13px] font-semibold hover:text-white transition-colors duration-200 group ml-auto"
+            >
+              <ExternalLinkIcon />
+              Live Demo
+            </a>
+          )}
         </div>
       </Tilt>
     </motion.div>
@@ -89,7 +108,7 @@ const Works = () => {
     activeFilter === "All"
       ? projects
       : projects.filter((p) =>
-        p.tags.some((t) => t.name === activeFilter)
+        p.tags.some((t) => t.name === activeFilter || t.name.includes(activeFilter))
       );
 
   return (
@@ -105,23 +124,24 @@ const Works = () => {
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
           Following projects showcase my skills and experience through real-world examples.
-          Each project is briefly described with links to code repositories.
+          Each project is briefly described with links to code repositories and live demos where available.
         </motion.p>
       </div>
 
       {/* Filter tabs */}
       <motion.div
         variants={fadeIn("", "", 0.2, 0.8)}
-        className="mt-8 flex flex-wrap gap-3"
+        className="mt-8 flex flex-wrap gap-3 items-center"
       >
-        {["All", "Java", "React", "Spring Boot", "React.js","Python"].map((filter) => (
+        {FILTER_OPTIONS.map((filter) => (
           <button
             key={filter}
             onClick={() => setActiveFilter(filter)}
-            className={`filter-tab px-4 py-2 rounded-full text-[13px] font-semibold border transition-all duration-300 ${activeFilter === filter
+            className={`filter-tab px-4 py-2 rounded-full text-[13px] font-semibold border transition-all duration-300 ${
+              activeFilter === filter
                 ? "active border-transparent text-white shadow-[0_0_20px_rgba(145,94,255,0.5)]"
                 : "border-[#915EFF]/30 text-secondary hover:border-[#915EFF]/60"
-              }`}
+            }`}
           >
             {filter}
           </button>

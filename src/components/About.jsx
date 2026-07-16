@@ -7,10 +7,10 @@ import { styles } from '../styles';
 import { fadeIn, textVariant } from '../utils/motion';
 
 const stats = [
-  { value: "15+", label: "Projects Built" },
-  { value: "4+", label: "Years Learning" },
-  { value: "10+", label: "Technologies" },
-  { value: "2", label: "Internships" },
+  { value: "15+", label: "Projects Built", icon: "🚀" },
+  { value: "4+", label: "Years Learning", icon: "📚" },
+  { value: "10+", label: "Technologies", icon: "⚙️" },
+  { value: "2", label: "Internships", icon: "💼" },
 ];
 
 /* CSS-only floating shapes — no WebGL context needed */
@@ -60,7 +60,7 @@ const FloatingShapes = () => (
       <polygon points="25,2 48,13 48,37 25,48 2,37 2,13"
         stroke="#915EFF" strokeWidth="1" fill="none" />
     </svg>
-    {/* Rotating ring */}
+    {/* Rotating rings */}
     <div
       className="absolute top-1/3 right-8 w-32 h-32 rounded-full border border-[#915EFF]/20 opacity-30"
       style={{ animation: "spin 20s linear infinite" }}
@@ -107,48 +107,73 @@ const About = () => {
           <h2 className={`${styles.sectionHeadText} section-head-text`}>Overview</h2>
         </motion.div>
 
-        <motion.p
+        <motion.div
           variants={fadeIn('', '', 0.1, 1)}
-          className="mt-6 text-secondary text-[19px] max-w-6xl leading-[38px]"
+          className="mt-6 max-w-6xl"
         >
-        <p className="text-secondary text-[17px] leading-[30px]">
-  I am a passionate and detail-oriented{' '}
-  <span className="text-[#915EFF] font-semibold">
-    Java Full Stack Developer
-  </span>{' '}
-  with expertise in{' '}
-  <span className="text-[#915EFF] font-semibold">
-    Java, Spring Boot, React, MySQL, HTML, CSS, and JavaScript
-  </span>
-  . I enjoy building{' '}
-  <span className="text-[#00cea8] font-semibold">
-    scalable, responsive, and user-friendly web applications
-  </span>{' '}
-  that solve real-world problems. My portfolio includes{' '}
-  <span className="text-[#915EFF] font-semibold">
-    AI-powered applications, real-time chat systems, authentication-based web apps,
-    and machine learning projects
-  </span>
-  . I am continuously expanding my knowledge in{' '}
-  <span className="text-[#00cea8] font-semibold">
-    modern backend development, cloud technologies, and AI integration
-  </span>{' '}
-  while building practical, industry-focused projects.
-</p>
-        </motion.p>
+          <p className="text-secondary text-[17px] leading-[30px]">
+            I am a passionate and detail-oriented{' '}
+            <span className="text-[#915EFF] font-semibold">
+              Java Full Stack Developer
+            </span>{' '}
+            with expertise in{' '}
+            <span className="text-[#915EFF] font-semibold">
+              Java, Spring Boot, React, MySQL, HTML, CSS, and JavaScript
+            </span>
+            . I enjoy building{' '}
+            <span className="text-[#00cea8] font-semibold">
+              scalable, responsive, and user-friendly web applications
+            </span>{' '}
+            that solve real-world problems. My portfolio includes{' '}
+            <span className="text-[#915EFF] font-semibold">
+              AI-powered applications, real-time chat systems, authentication-based web apps,
+              and machine learning projects
+            </span>
+            . I am continuously expanding my knowledge in{' '}
+            <span className="text-[#00cea8] font-semibold">
+              modern backend development, cloud technologies, and AI integration
+            </span>{' '}
+            while building practical, industry-focused projects.
+          </p>
+
+          {/* Download CV Button */}
+          <motion.div
+            variants={fadeIn('up', 'spring', 0.3, 0.75)}
+            className="mt-7 flex gap-4 flex-wrap"
+          >
+            <a
+              href="/sarthak.resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#915EFF] text-white font-semibold text-sm hover:bg-[#7a4fd6] transition-all duration-300 hover:shadow-[0_0_25px_rgba(145,94,255,0.6)] hover:-translate-y-1"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+              </svg>
+              Download CV
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#915EFF] text-[#915EFF] font-semibold text-sm hover:bg-[#915EFF] hover:text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(145,94,255,0.4)] hover:-translate-y-1"
+            >
+              Hire Me →
+            </a>
+          </motion.div>
+        </motion.div>
 
         {/* Stats Row */}
         <motion.div
           variants={fadeIn('up', 'spring', 0.3, 0.75)}
-          className="mt-10 grid grid-cols-2 xs:grid-cols-4 gap-9 max-w-4xl"
+          className="mt-10 grid grid-cols-2 xs:grid-cols-4 gap-6 max-w-4xl"
         >
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
               variants={fadeIn('up', 'spring', 0.2 + index * 0.1, 0.6)}
-              className="glass-card rounded-2xl p-4 text-center hover:border-[#915EFF] transition-all duration-300 hover:shadow-[0_0_20px_rgba(145,94,255,0.3)]"
+              className="glass-card rounded-2xl p-5 text-center hover:border-[#915EFF] transition-all duration-300 hover:shadow-[0_0_20px_rgba(145,94,255,0.3)] group cursor-default"
             >
-              <h3 className="text-[#915EFF] text-[28px] font-black">{stat.value}</h3>
+              <div className="text-2xl mb-1">{stat.icon}</div>
+              <h3 className="text-[#915EFF] text-[28px] font-black group-hover:scale-110 transition-transform duration-300">{stat.value}</h3>
               <p className="text-secondary text-[13px] mt-1">{stat.label}</p>
             </motion.div>
           ))}

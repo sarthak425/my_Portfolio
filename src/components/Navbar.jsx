@@ -14,6 +14,7 @@ const Navbar = () => {
     window.open('/sarthak.resume.pdf');
   };
 
+  // Scroll progress + scrolled state
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -25,6 +26,37 @@ const Navbar = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Active section tracking via IntersectionObserver
+  useEffect(() => {
+    const sectionIds = navLinks.map((link) => link.id);
+    const observers = [];
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-40% 0px -55% 0px',
+      threshold: 0,
+    };
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const matchedLink = navLinks.find((l) => l.id === id);
+            if (matchedLink) setActive(matchedLink.title);
+          }
+        });
+      }, observerOptions);
+
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
   }, []);
 
   useEffect(() => {
@@ -40,8 +72,9 @@ const Navbar = () => {
       />
 
       <nav
-        className={`${styles.paddingX} w-full flex items-center py-4 fixed top-0 z-20 transition-all duration-500 ${scrolled ? 'glass-nav' : 'bg-transparent'
-          }`}
+        className={`${styles.paddingX} w-full flex items-center py-4 fixed top-0 z-20 transition-all duration-500 ${
+          scrolled ? 'glass-nav' : 'bg-transparent'
+        }`}
       >
         <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
           <Link
@@ -68,8 +101,9 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <li
                 key={link.id}
-                className={`nav-link text-[15px] font-medium cursor-pointer transition-all duration-200 ${active === link.title ? 'text-white' : 'text-secondary'
-                  } hover:text-white`}
+                className={`nav-link text-[15px] font-medium cursor-pointer transition-all duration-200 ${
+                  active === link.title ? 'text-white' : 'text-secondary'
+                } hover:text-white`}
                 onClick={() => setActive(link.title)}
               >
                 <a href={`#${link.id}`}>{link.title}</a>
@@ -94,15 +128,17 @@ const Navbar = () => {
               onClick={() => setToggle(!toggle)}
             />
             <div
-              className={`glass-card p-6 absolute top-16 right-4 min-w-[160px] z-10 rounded-2xl transition-all duration-300 ${toggle ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'
-                }`}
+              className={`glass-card p-6 absolute top-16 right-4 min-w-[160px] z-10 rounded-2xl transition-all duration-300 ${
+                toggle ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'
+              }`}
             >
               <ul className="list-none flex flex-col gap-4">
                 {navLinks.map((link) => (
                   <li
                     key={link.id}
-                    className={`${active === link.title ? 'text-white' : 'text-secondary'
-                      } hover:text-white text-[16px] font-medium cursor-pointer`}
+                    className={`${
+                      active === link.title ? 'text-white' : 'text-secondary'
+                    } hover:text-white text-[16px] font-medium cursor-pointer`}
                     onClick={() => {
                       setToggle(false);
                       setActive(link.title);

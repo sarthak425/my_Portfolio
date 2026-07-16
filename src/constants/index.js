@@ -55,7 +55,7 @@ export const technologies = [
   { name: "HTML 5", icon: html },
   { name: "CSS 3", icon: css },
   { name: "JavaScript", icon: javascript },
-  { name: "Rect JS", icon: reactjs },
+  { name: "React JS", icon: reactjs },
   { name: "Tailwind CSS", icon: tailwind },
   { name: "Node JS", icon: nodejs },
   { name: "Three JS", icon: threejs },
@@ -238,10 +238,12 @@ export const projects = [
   {
     name: "Online Voting Application",
     description:
-      "A full-stack Voting Application that allows users to create polls, vote on options, and view real-time results. The backend is built with Spring Boot, and the frontend is developed using [React or Angular — replace this].",
+      "A full-stack Voting Application built with Spring Boot and Angular that allows users to create polls, cast votes, and view real-time results. The backend provides RESTful APIs with Spring Data JPA, while the Angular frontend delivers a responsive and interactive UI.",
     tags: [
       { name: "Java", color: "blue-text-gradient" },
-      { name: "Spring Boot", color: "green-text-gradient" },],
+      { name: "Spring Boot", color: "green-text-gradient" },
+      { name: "Angular", color: "pink-text-gradient" },
+    ],
     image: OnlineVotingApplication,
     source_code_link: "https://github.com/sarthak425/Online-Voting-Application-Spring-Boot-Angular-",
   },
@@ -281,14 +283,14 @@ export const projects = [
   demo_link: "https://github.com/sarthak425/SimpleSpringProject",
 },
   {
-    name: "Cloud Streeaming",
+    name: "Cloud Streaming",
     description:
-      "CLOUD-STREAMING project is a web-based movie management system built with Java and HTML, allowing users to  search, and watch movies. It’s essentially a demo of a streaming-style platform, similar in concept to Netflix or Amazon Prime",
+      "A web-based movie management and streaming platform built with Java and HTML, allowing users to browse, search, and watch movies. Inspired by platforms like Netflix and Amazon Prime, it demonstrates full-stack web capabilities with a clean UI and server-side rendering.",
     tags: [
       { name: "HTML", color: "blue-text-gradient" },
       { name: "Java", color: "green-text-gradient" },
-      { name: "Css", color: "pink-text-gradient" },
-      { name: "JavaScript", color: "blue-text-gradient" },
+      { name: "CSS", color: "pink-text-gradient" },
+      { name: "JavaScript", color: "yellow-text-gradient" },
     ],
 
     image: CLOUDSTREAMING,
