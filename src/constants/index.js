@@ -27,12 +27,21 @@ import {
   urlshortener,
   textutil,
   simplespringproject,
+  stocksense,
+  securevault,
+  nanokhadya,
+  myportfolio,
+  weatherforecast,
 } from "../assets";
 
 export const navLinks = [
   {
     id: "about",
     title: "About",
+  },
+  {
+    id: "skills",
+    title: "Skills",
   },
   {
     id: "work",
@@ -123,8 +132,52 @@ export const experiences = [
 ];
 
 export const projects = [
-
-
+  {
+    name: "NanoKhadya",
+    description:
+      "Portable nano-engineered rapid food testing kit and screening platform developed for the Smart India Hackathon (MoFPI). Combines a 6-zone paper microfluidic cartridge (μPAD), ESP32-S3 IoT optical reader, OpenCV computer vision colorimetric analysis (CIELAB & 4PL regression), and a Spring Boot 3 enterprise core with FSSAI statutory compliance decision engine and real-time React dashboard.",
+    tags: [
+      { name: "Spring Boot", color: "green-text-gradient" },
+      { name: "React", color: "pink-text-gradient" },
+      { name: "TypeScript", color: "blue-text-gradient" },
+      { name: "Python", color: "green-text-gradient" },
+      { name: "OpenCV", color: "blue-text-gradient" },
+      { name: "FastAPI", color: "cyan-text-gradient" },
+      { name: "IoT ESP32", color: "orange-text-gradient" },
+    ],
+    image: nanokhadya,
+    source_code_link: "https://github.com/sarthak425/Nanokhadya",
+    demo_link: "https://github.com/sarthak425/Nanokhadya",
+  },
+  {
+    name: "Interactive 3D Portfolio",
+    description:
+      "A modern, high-performance 3D developer portfolio web application built with React, Three.js, and Tailwind CSS. Features interactive 3D WebGL computer and planetary models, dynamic typewriter animations, fluid Framer Motion transitions, responsive project filtering, and direct EmailJS contact integration.",
+    tags: [
+      { name: "React", color: "pink-text-gradient" },
+      { name: "Three.js", color: "blue-text-gradient" },
+      { name: "JavaScript", color: "yellow-text-gradient" },
+      { name: "Tailwind CSS", color: "cyan-text-gradient" },
+      { name: "Framer Motion", color: "orange-text-gradient" },
+    ],
+    image: myportfolio,
+    source_code_link: "https://github.com/sarthak425/my_Portfolio",
+    demo_link: "https://sarthak425.github.io/my_Portfolio/",
+  },
+  {
+    name: "Weather Forecast App",
+    description:
+      "A responsive weather forecasting web application powered by Java and OpenWeatherMap REST APIs. Provides live city weather tracking, multi-day temperature forecasts, wind speed, atmospheric pressure, and humidity metrics with dynamic weather condition visuals.",
+    tags: [
+      { name: "Java", color: "orange-text-gradient" },
+      { name: "REST API", color: "blue-text-gradient" },
+      { name: "JavaScript", color: "yellow-text-gradient" },
+      { name: "HTML5", color: "pink-text-gradient" },
+    ],
+    image: weatherforecast,
+    source_code_link: "https://github.com/sarthak425/Weather-Forecast-App",
+    demo_link: "https://github.com/sarthak425/Weather-Forecast-App",
+  },
   {
     name: "AI Resume Builder",
     description:
@@ -178,6 +231,42 @@ export const projects = [
     image: chatApplication,
     source_code_link: "https://github.com/sarthak425/chat-Application-using-Spring-Boot-and-WebSockets",
   },
+  {
+  name: "Stock Sense",
+  description:
+    "Stock Sense is a Django-based stock market analysis platform that helps users monitor stocks, manage investment portfolios, set price alerts, explore financial news, analyze historical market data through backtesting, and generate stock predictions. The application provides a centralized dashboard for tracking market information and making data-driven investment analysis.",
+  tags: [
+    { name: "Python", color: "green-text-gradient" },
+    { name: "Django", color: "green-text-gradient" },
+    { name: "JavaScript", color: "yellow-text-gradient" },
+    { name: "HTML", color: "orange-text-gradient" },
+    { name: "CSS", color: "blue-text-gradient" },
+    { name: "SQLite", color: "pink-text-gradient" },
+  ],
+
+  image: stocksense,
+
+  source_code_link: "https://github.com/sarthak425/Stock_Sense",
+  demo_link: "https://github.com/sarthak425/Stock_Sense",
+},
+{
+  name: "SecureVault",
+  description:
+    "SecureVault is a secure password management application designed to help users safely store, organize, and manage their sensitive credentials in one place. The application focuses on secure authentication, protected data storage, and convenient credential management while providing a simple and user-friendly interface for managing passwords and sensitive information.",
+  tags: [
+    { name: "Java", color: "orange-text-gradient" },
+    { name: "Spring Boot", color: "green-text-gradient" },
+    { name: "Spring Security", color: "blue-text-gradient" },
+    { name: "JWT", color: "pink-text-gradient" },
+    { name: "MySQL", color: "blue-text-gradient" },
+    { name: "React", color: "cyan-text-gradient" },
+  ],
+
+  image: securevault,
+
+  source_code_link: "https://github.com/sarthak425/SecureVault-",
+  demo_link: "https://github.com/sarthak425/SecureVault-",
+},
   {
     name: "E Commerce Product",
     description:
@@ -295,5 +384,22 @@ export const projects = [
 
     image: CLOUDSTREAMING,
     source_code_link: "https://github.com/sarthak425/CLOUD-STREAMING",
+  },
+];
+
+export const certifications = [
+  {
+    name: "Full Stack Java Developer",
+    issuer: "Orange Itech",
+    date: "2024",
+    image: OrangeItech, // reusing image for now
+    link: "",
+  },
+  {
+    name: "Machine Learning with Python",
+    issuer: "GTT Data Solutions",
+    date: "2026",
+    image: gtt, // reusing image for now
+    link: "",
   },
 ];

@@ -7,9 +7,9 @@ import { styles } from '../styles';
 import { fadeIn, textVariant } from '../utils/motion';
 
 const stats = [
-  { value: "15+", label: "Projects Built", icon: "🚀" },
-  { value: "4+", label: "Years Learning", icon: "📚" },
-  { value: "10+", label: "Technologies", icon: "⚙️" },
+  { value: "16+", label: "Projects Built", icon: "🚀" },
+  { value: "20+", label: "GitHub Repos", icon: "💻" },
+  { value: "12+", label: "Technologies", icon: "⚙️" },
   { value: "2", label: "Internships", icon: "💼" },
 ];
 
@@ -142,7 +142,7 @@ const About = () => {
             className="mt-7 flex gap-4 flex-wrap"
           >
             <a
-              href={`${import.meta.env.BASE_URL}sarthak.resume.pdf?v=2`}
+              href={`${import.meta.env.BASE_URL}resume.html`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#915EFF] text-white font-semibold text-sm hover:bg-[#7a4fd6] transition-all duration-300 hover:shadow-[0_0_25px_rgba(145,94,255,0.6)] hover:-translate-y-1"

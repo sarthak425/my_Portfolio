@@ -24,6 +24,11 @@ import full from "./projects/full.png"
 import urlshortener from "./projects/urlshortener.png"
 import textutil from "./projects/textutil.png"
 import simplespringproject from "./projects/simplespringproject.png"
+import stocksense from "./projects/stocksense.png"
+import securevault from "./projects/securevault.png"
+import nanokhadya from "./projects/nanokhadya.png"
+import myportfolio from "./projects/myportfolio.png"
+import weatherforecast from "./projects/WeatherPedia.png"
 
 // Import tech logos
 import css from "./tech/css.png";
@@ -75,4 +80,9 @@ export {
   urlshortener,
   textutil,
   simplespringproject,
+  stocksense,
+  securevault,
+  nanokhadya,
+  myportfolio,
+  weatherforecast,
 };

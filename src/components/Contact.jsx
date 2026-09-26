@@ -29,7 +29,7 @@ const EmailIcon = () => (
 const socialLinks = [
   {
     name: "GitHub",
-    url: "https://github.com/sarthak425",
+    url: "https://github.com/sarthak425?tab=repositories",
     icon: <GitHubIcon />,
     hoverColor: "hover:border-white/60 hover:text-white",
   },
@@ -109,8 +109,8 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_azsaobb",
-        "template_kfumb0d",
+        "service_o1izaw6",
+        "template_4z5rdw8",
         {
           from_name: form.name,
           to_name: "Sarthak Khatpe",
@@ -118,7 +118,7 @@ const Contact = () => {
           to_email: "sarthakkhatpe24@gmail.com",
           message: form.message,
         },
-        "xxvK2qybkwWIFB-Zs"
+        "AoYCPAlOdEWTh5Mxn"
       )
       .then(() => {
         setLoading(false);
@@ -127,7 +127,7 @@ const Contact = () => {
       })
       .catch((error) => {
         setLoading(false);
-        console.error(error);
+        console.error("EmailJS Error:", error);
         setConfirmation("❌ Something went wrong. Please try again.");
       });
   };

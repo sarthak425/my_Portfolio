@@ -61,11 +61,11 @@ const Footer = () => {
           className="flex items-center gap-5"
         >
           <a
-            href="https://github.com/sarthak425"
+            href="https://github.com/sarthak425?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
             className="text-secondary hover:text-white transition-colors duration-300 hover:-translate-y-1 transform"
-            aria-label="GitHub"
+            aria-label="GitHub Repositories"
           >
             <GitHubIcon />
           </a>

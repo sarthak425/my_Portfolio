@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Decal, Float, OrbitControls, Preload, useTexture } from "@react-three/drei";
-import CanvasLoader from "../Loader";
+import CanvasLoader from "../CanvasLoader";
 
 const Ball = React.memo(({ iconUrl }) => {
   const [decal] = useTexture([iconUrl]);

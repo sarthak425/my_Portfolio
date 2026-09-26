@@ -163,8 +163,43 @@ const Works = () => {
           ))}
         </AnimatePresence>
       </motion.div>
+
+      {/* GitHub Repositories Banner */}
+      <motion.div
+        variants={fadeIn("up", "spring", 0.3, 0.75)}
+        className="mt-16 w-full rounded-2xl p-6 sm:p-8 relative overflow-hidden glass-card border border-[#915EFF]/30 flex flex-col md:flex-row items-center justify-between gap-6 bg-gradient-to-r from-[#151030]/90 via-[#1d1836]/90 to-[#151030]/90 shadow-[0_0_30px_rgba(145,94,255,0.15)]"
+      >
+        <div className="flex items-center gap-5">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-black/60 border border-[#915EFF]/50 flex items-center justify-center shadow-[0_0_20px_rgba(145,94,255,0.4)] flex-shrink-0">
+            <img src={github} alt="GitHub" className="w-8 h-8 sm:w-9 sm:h-9 object-contain" />
+          </div>
+          <div>
+            <div className="flex items-center gap-3 flex-wrap">
+              <h3 className="text-white text-[20px] sm:text-[22px] font-bold">
+                More Open Source Repositories
+              </h3>
+              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#915EFF]/20 text-[#915EFF] border border-[#915EFF]/40">
+                20+ Repositories
+              </span>
+            </div>
+            <p className="mt-1 text-secondary text-[13px] sm:text-[14px] max-w-xl leading-relaxed">
+              Explore all my full-stack projects, experimental repositories, IoT solutions, and open-source contributions on GitHub.
+            </p>
+          </div>
+        </div>
+
+        <a
+          href="https://github.com/sarthak425?tab=repositories"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-6 py-3 rounded-full bg-gradient-to-r from-[#915EFF] to-[#7a4fd6] text-white font-semibold text-[13px] sm:text-[14px] hover:shadow-[0_0_25px_rgba(145,94,255,0.7)] transition-all duration-300 flex items-center gap-2 flex-shrink-0 hover:-translate-y-0.5 group"
+        >
+          <span>View GitHub Repositories</span>
+          <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
+        </a>
+      </motion.div>
     </>
   );
 };
 
-export default SectionWrapper(Works, "");
+export default SectionWrapper(Works, "work");

@@ -13,6 +13,12 @@ import Experience from "./Experience";
 import Works from "./Works";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import Skills from "./Skills";
+import Stats from "./Stats";
+import Loader from "./Loader";
+import BackToTop from "./BackToTop";
+import Cursor from "./Cursor";
+import Certifications from "./Certifications";
 
 export {
   Hero,
@@ -22,6 +28,12 @@ export {
   Experience,
   Works,
   Contact,
+  Skills,
+  Stats,
+  Loader,
+  BackToTop,
+  Cursor,
+  Certifications,
   Footer,
   EarthCanvas,
   BallCanvas,
